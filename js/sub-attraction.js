@@ -146,13 +146,14 @@
             var section4 = $('#section4').offset().top;
             var autoScrolling = false;
             var location = 'firstPage';
+            var wrapwidth = $('#wrap').width();
     
             
         
             $(window).scroll(function(){
                 var winscl = $(window).scrollTop();
                 
-                if(!autoScrolling){
+                if(!autoScrolling && wrapwidth > 500){
                     if( winscl > section1 +1 && location == 'firstPage'){
                         scrollPage(section2, 'secondPage');
                     }
