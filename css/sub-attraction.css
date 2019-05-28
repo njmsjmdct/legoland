@@ -1,0 +1,1692 @@
+@charset "utf-8";
+
+@keyframes move {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+@keyframes shadow {
+    0% {
+        transform: scale(1, 1);
+        opacity: 0.2;
+    }
+    50% {
+        transform: scale(0.8, 0.8);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1, 1);
+        opacity: 0.2;
+    }
+}
+
+@keyframes bird {
+    0% {
+        right: 0px;
+    }
+    40% {
+        top: 350px;
+    }
+    70% {
+        top: 100px;
+    }
+    100% {
+        right: 2000px;
+    }
+}
+
+@keyframes spider {
+    0% {
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(30deg);
+    }
+    100% {
+        transform: rotate(-10deg);
+    }
+}
+@keyframes swim {
+    0%{
+        bottom: 40px;
+        right: 130px;
+    }
+    25%{
+        bottom: 70px;
+        right: 150px;
+    }
+    50% {
+        bottom: 40px;
+        right: 160px;
+    }
+    75% {
+        bottom: 70px;
+        right: 150px;
+    }
+    100% {
+        bottom: 40px;
+        right: 130px;
+    }
+}
+@keyframes fly {
+    0% {
+        transform: translateY(-364px);
+    }
+    30% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-364px);
+    }
+    70% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-364px);
+    }
+}
+
+@keyframes hand {
+    0% {
+        right: 70px;
+    }
+    100% {
+        right: 30px;
+        opacity: 0;
+    }
+}
+
+@keyframes hand2 {
+    0% {
+        left: 70px;
+    }
+    100% {
+        left: 30px;
+        opacity: 0;
+    }
+}
+
+/* 전체 레이아웃 */
+
+
+#wrap {
+    width: 100%;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+.triger500px {
+    display: none;
+    position: fixed;
+    left: 0;
+    bottom: -250px;
+    width: 500px;
+    height: 250px;
+    z-index: 9000;
+}
+.triger500px .x {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    cursor: pointer;
+}
+.triger500px .x img {
+    width: 25px;
+}
+.triger500px .infobox500 {
+    width: 500px;
+    height: 200px;
+    background-color: rgba(255,255,255,0.8);
+    margin-top: 50px;
+}
+.triger500px .infobox500:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.triger500px .infobox500 .infoimg {
+    width: 50%;
+    float: left;
+}
+.triger500px .infobox500 .infotxt {
+    width: 50%;
+    float: right;
+    padding: 20px;
+    padding-right: 5px;
+}
+.triger500px .infobox500 .infoimg img {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 250px;
+}
+.triger500px .infobox500 .infoimg h3 {
+    font-size: 30px;
+    padding-top: 150px;
+    text-align: center;
+    font-family: "yg-jalnan";
+}
+.triger500px .infobox500 .infotxt p {
+    font-size: 16px;
+}
+.triger500px .infobox500 .infotxt .iconbox {}
+.triger500px .infobox500 .infotxt .iconbox:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.triger500px .infobox500 .infotxt .iconbox li {
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+.triger500px .infobox500 .infotxt .iconbox li img {
+    width: 75px;
+}
+
+
+/* loading */
+
+/*
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100000000;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255,255,255,0.6);
+}
+
+.loading .boxbox {
+    position: absolute;
+    left: 40%;
+    top: 38%;
+    text-align: center;
+}
+.loading .boxbox img {
+    width: 30%;
+}
+.loading .boxbox p {
+    font-size: 20px;
+    font-family: "yg-jalnan";
+}
+.loading .boxbox ul {
+    transform: translateX(20px);
+    margin: 0 auto;
+    width: 100px;
+    margin-top: 10px;
+}
+.loading .boxbox ul:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.loading .boxbox ul li {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #fff;
+    float: left;
+    margin-left: 10px;
+}
+.loading .boxbox ul li.on {
+    background-color: red;
+}
+*/
+
+
+#section1 {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/sub-attraction/section1bg.jpg);
+    position: relative;
+}
+#section2 {
+    width: 100%;
+    height: 100vh;
+    background: #F7971E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFD200, #F7971E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFD200, #F7971E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: relative;
+    overflow: hidden;
+}
+#section3 {
+    width: 100%;
+    height: 100vh;
+    background: #2193b0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    overflow: hidden;
+    position: relative;
+}
+#section4 {
+    width: 100%;
+    height: 100vh;
+    background: #2b5876;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #34285c, #3a2d6a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #3a2d6a, #34285c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    width: 1350px;
+    margin: 0 auto;
+/*    background-color: green;*/
+}
+
+.sec2conbg img, .sec3conbg img, .sec4conbg img {
+    width: 100%;
+}
+
+
+/* 타이틀 텍스트 시작 */
+
+#section1 .title {
+    width: 500px;
+    margin: 0 auto;
+    transform: translateY(100px);
+}
+
+#section1 .title h1 {
+    font-size: 80px;
+    color: #fff;
+    font-weight: 800;
+    text-align: center;
+    transform: skewY(-10deg);
+    letter-spacing: -12px;
+}
+#section1 .title h1 p {
+    
+}
+
+#section1 .title p:nth-child(1) {
+    color: #ed1c24;
+}
+#section1 .title p:nth-child(2) {
+    color: #fbd209;
+}
+
+#section1 .title span {
+    display: inline-block;
+    text-shadow: #525252 2px 2px, #525252 3px 3px, #525252 4px 4px, #525252 5px 5px;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.4s;
+    font-family: "yg-jalnan";
+}
+
+#section1 .title span.text1.on {
+    transform: translateY(0);
+    opacity: 1;
+}
+#section1 .title span.text2.on {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.15s;
+}
+#section1 .title span.text3.on {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.3s;
+}
+#section1 .title span.text4.on {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.45s;
+}
+#section1 .title span.text5.on {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.6s;
+}
+#section1 .title span.text6.on {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.75s;
+}
+#section1 .title span.text7.on {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.9s;
+}
+#section1 .title span.text8.on {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 1.05s;
+}
+#section1 .title span.text9.on {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 1.2s;
+}
+#section1 .title span.text10.on {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 1.35s;
+}
+#section1 .title span.text11.on {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 1.5s;
+}
+
+
+/* section1 새 */
+
+#section1 .bird {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    animation-name: bird;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+
+
+/* section1 contents 시작 */
+
+#section1 .section1contents {
+    width: 1350px;
+    margin: 0 auto;
+    padding-top: 200px;
+}
+#section1 .section1contents .section1ul1 {
+}
+#section1 .section1contents .section1ul1:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+#section1 .section1contents .section1ul1 li {
+    float: left;
+    width: 450px;
+    text-align: center;
+}
+
+#section1 .section1contents .section1ul2 {}
+#section1 .section1contents .section1ul2:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+#section1 .section1contents .section1ul2 li {
+    float: left;
+    margin-left: 60px;
+}
+#section1 .section1contents .section1ul2 li img {
+    width: 100%;
+    height: auto;
+}
+
+#section1 .section1contents .section1ul2 li.on {
+    animation-name: move;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+#section1 .section1contents .section1ul3:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+#section1 .section1contents .section1ul3 li{
+    float: left;
+    width: 450px;
+    height: 40px;
+    text-align: center;
+}
+#section1 .section1contents .section1ul3 li span {
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: black;
+    opacity: 0.2;
+}
+
+#section1 .section1contents .section1ul3 li span.on {
+    animation-name: shadow;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+} 
+
+
+/*section1 media query */
+
+.section1-500px {
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 120px;
+    display: none;
+}
+.section1-500px ul {
+}
+.section1-500px ul li {
+    width: 100%;
+    height: 180px;
+    background-color: rgba(255,255,255,0.4);
+    margin-bottom: 10px;
+}
+.section1-500px ul li a {}
+.section1-500px ul li a img {
+    width: 200px;
+    margin-left: 20px;
+}
+.section1-500px ul li a span {
+    display: inline-block;
+    height: 200px;
+    line-height: 200px;
+    font-size: 30px;
+    padding-left: 20px;
+    font-family: "yg-jalnan";
+}
+
+
+
+
+/* section2 시작 */
+
+#section2 h2 {
+    text-align: center;
+    font-size: 80px;
+    font-family: "yg-jalnan";
+    color: #fff;
+    padding-top: 110px;
+}
+
+.container > p {
+    padding-top: 40px;
+    text-align: center;
+    font-size: 20px;
+}
+
+#section2 .spider {
+    position: absolute;
+    top: -300px;
+    left: 210px;
+    transform-origin: 50px 0;
+    animation-name: spider;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+#section2 .section2contents {
+    width: 1350px;
+    margin: 0 auto;
+    position: relative;
+    transform: translateX(-50px);
+}
+
+#section2 .section2contents .sec2conbg {
+    width: 800px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+#section2 .section2contents .sec2conbg img {
+    width: 100%;
+    height: auto;
+    transition: all 0.3s;
+}
+
+/*section2 select 시작 */
+#section2 .section2contents .sec2select {
+    width: 750px;
+    height: 500px;
+    position: relative;
+    top: -600px;
+    left: 300px;
+}
+#section2 .section2contents .sec2select li {
+    position: absolute;
+    cursor: pointer;
+}
+#section2 .section2contents .sec2select li img {
+    position: absolute;
+    top: -40px;
+    left: 36%;
+    animation-name: move;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    display: none;
+}
+#section2 .section2contents .sec2select li.select1 {
+    width: 180px;
+    height: 100px;
+/*    background-color: red;*/
+    top: 30px;
+    left: 230px;
+}
+#section2 .section2contents .sec2select li.select2 {
+    width: 180px;
+    height: 100px;
+/*    background-color: blue;*/
+    top: 90px;
+    left: 560px;
+}
+#section2 .section2contents .sec2select li.select3 {
+    width: 180px;
+    height: 100px;
+/*    background-color: pink;*/
+    top: 130px;
+    left: 0px;
+}
+#section2 .section2contents .sec2select li.select4 {
+    width: 200px;
+    height: 120px;
+/*    background-color: green;*/
+    top: 250px;
+    left: 0px;
+}
+
+
+/* section2 info 시작 */
+#section2 .triger {
+    width: 550px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: -500px;
+}
+
+/* button */
+
+#section2 .triger .button {
+    width: 50px;
+    height: 100vh;
+    position: absolute;
+    top:0;
+    left: 0;
+    display: table;
+}
+#section2 .triger .button img {
+    position: absolute;
+    top: 50%;
+    right: 70px;
+    animation-name: hand;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+#section2 .triger .button div {
+    top: 48%;
+    left: 20px;
+    position: absolute;
+    width: 50px;
+    height: 100px;
+    cursor: pointer;
+}
+#section2 .triger .button span {
+    display: block;
+    width: 6px;
+    height: 50px;
+    background-color: #fff;
+    transition: all 0.4s;
+    border-radius: 4px 4px;
+}
+
+#section2 .triger .button .btn_off {
+    display: none;
+}
+
+
+#section2 .triger .infobox {
+    width: 500px;
+    height: 100%;
+    background-color: #fff;
+    overflow: hidden;
+    margin-left: 50px;
+}
+#section2 .triger .infobox .imgbox {
+    width: 750px;
+    height: 750px;
+    background-color: blue;
+    transform: rotate(45deg) translateX(-550px);
+    overflow: hidden;
+}
+#section2 .triger .infobox .imgbox img {
+    position: absolute;
+    top: 140px;
+    left: 400px;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-45deg);
+}
+#section2 .triger .infobox .illust {
+    position: absolute;
+    top: 200px;
+    right: 0;
+}
+#section2 .triger .infobox .info {
+    position: absolute;
+    top: 550px;
+    left: 100px;
+}
+#section2 .triger .infobox .info h3 {
+    font-size: 50px;
+    font-weight: 800;
+}
+#section2 .triger .infobox .info .bottombar {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100px;
+    height: 5px;
+    background-color: skyblue;
+}
+#section2 .triger .infobox .info p {
+    width: 400px;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+#section2 .triger .infobox .info ul.iconbox {
+    position: relative;
+    top: 40px;
+    left: 0;
+}
+#section2 .triger .infobox .info ul.iconbox:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+#section2 .triger .infobox .info ul.iconbox li {
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+#section2 .triger .infobox .info ul.iconbox li h4 {
+    font-size: 25px;
+    font-weight: 600;
+    padding: 20px 0;
+}
+#section2 .triger .infobox .info ul.iconbox li span {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+
+
+/* section3 시작 */
+
+#section3 h2 {
+    text-align: center;
+    font-size: 80px;
+    font-family: "yg-jalnan";
+    color: #fff;
+    padding-top: 110px;
+}
+
+#section3 .swim {
+    position: absolute;
+    right: 140px;
+    bottom: 40px;
+    animation-name: swim;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+#section3 .section3contents {
+    width: 1350px;
+    margin: 0 auto;
+    transform: translateX(-50px);
+}
+
+#section3 .section3contents .sec3conbg {
+    width: 800px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+/*section2 select 시작 */
+#section3 .section3contents .sec3select {
+    width: 750px;
+    height: 500px;
+    position: relative;
+    top: -600px;
+    left: 300px;
+}
+#section3 .section3contents .sec3select li {
+    position: absolute;
+    cursor: pointer;
+}
+#section3 .section3contents .sec3select li img {
+    position: absolute;
+    top: -40px;
+    left: 36%;
+    animation-name: move;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    display: none;
+}
+#section3 .section3contents .sec3select li.select1 {
+    width: 180px;
+    height: 100px;
+/*    background-color: red;*/
+    top: 100px;
+    left: 270px;
+    transform: rotate(45deg);
+}
+#section3 .section3contents .sec3select li.select2 {
+    width: 250px;
+    height: 100px;
+/*    background-color: blue;*/
+    top: 200px;
+    left: 30px;
+}
+#section3 .section3contents .sec3select li.select3 {
+    width: 220px;
+    height: 100px;
+/*    background-color: pink;*/
+    top: 310px;
+    left: 50px;
+}
+#section3 .section3contents .sec3select li.select4 {
+    width: 170px;
+    height: 100px;
+/*    background-color: green;*/
+    top: 300px;
+    left: 310px;
+}
+
+/* section3 info 시작 */
+#section3 .triger {
+    width: 550px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: -500px;
+}
+
+/* button */
+
+#section3 .triger .button {
+    width: 50px;
+    height: 100vh;
+    position: absolute;
+    top:0;
+    right: 0;
+}
+#section3 .triger .button img {
+    position: absolute;
+    top: 50%;
+    left: 70px;
+    animation-name: hand2;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+#section3 .triger .button div {
+    top: 48%;
+    left: 20px;
+    position: absolute;
+    width: 50px;
+    height: 100px;
+    cursor: pointer;
+}
+#section3 .triger .button span {
+    display: block;
+    width: 6px;
+    height: 50px;
+    background-color: #fff;
+    transition: all 0.4s;
+    border-radius: 4px 4px;
+}
+
+#section3 .triger .button .btn_off {
+    display: none;
+}
+
+
+#section3 .triger .infobox {
+    width: 500px;
+    height: 100%;
+    background-color: #fff;
+    overflow: hidden;
+}
+#section3 .triger .infobox .imgbox {
+    width: 750px;
+    height: 750px;
+    background-color: blue;
+    transform: rotate(45deg) translateX(-550px);
+    overflow: hidden;
+}
+#section3 .triger .infobox .imgbox img {
+    position: absolute;
+    top: 140px;
+    left: 400px;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-45deg);
+}
+#section3 .triger .infobox .illust {
+    position: absolute;
+    top: 150px;
+    right: 50px;
+}
+#section3 .triger .infobox .info {
+    position: absolute;
+    top: 550px;
+    right: 100px;
+}
+#section3 .triger .infobox .info h3 {
+    font-size: 50px;
+    font-weight: 800;
+}
+#section3 .triger .infobox .info .bottombar {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100px;
+    height: 5px;
+    background-color: skyblue;
+}
+#section3 .triger .infobox .info p {
+    width: 400px;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+#section3 .triger .infobox .info ul.iconbox {
+    position: relative;
+    top: 40px;
+    left: 0;
+}
+#section3 .triger .infobox .info ul.iconbox:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+#section3 .triger .infobox .info ul.iconbox li {
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+#section3 .triger .infobox .info ul.iconbox li h4 {
+    font-size: 25px;
+    font-weight: 600;
+    padding: 20px 0;
+}
+#section3 .triger .infobox .info ul.iconbox li span {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+/* section4 시작 */
+
+#section4 h2 {
+    text-align: center;
+    font-size: 80px;
+    font-family: "yg-jalnan";
+    color: #fff;
+    padding-top: 110px;
+}
+#section4 p {
+    color: #fff;
+}
+
+#section4 .fly {
+    width: 600px;
+    height: 364px;
+    overflow: hidden;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    z-index: 1;
+    transform: rotate(-15deg);
+}
+#section4 .fly img.on {
+    transform: translateY(-364px);
+}
+
+
+#section4 .section4contents {
+    width: 1350px;
+    margin: 0 auto;
+    transform: translateX(-50p);
+}
+
+#section4 .section4contents .sec4conbg {
+    width: 800px;
+    margin: 0 auto;
+    padding-top: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+/*section4 select 시작 */
+#section4 .section4contents .sec4select {
+    width: 750px;
+    height: 500px;
+    position: relative;
+    top: -600px;
+    left: 300px;
+    z-index: 3;
+}
+#section4 .section4contents .sec4select li {
+    position: absolute;
+    cursor: pointer;
+}
+#section4 .section4contents .sec4select li img {
+    position: absolute;
+    top: -40px;
+    left: 36%;
+    animation-name: move;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    display: none;
+}
+#section4 .section4contents .sec4select li.select1 {
+    width: 350px;
+    height: 200px;
+/*    background-color: red;*/
+    top: 80px;
+    left: 30px;
+}
+#section4 .section4contents .sec4select li.select2 {
+    width: 350px;
+    height: 50px;
+/*    background-color: blue;*/
+    top: 310px;
+    left: 405px;
+}
+#section4 .section4contents .sec4select li.select3 {
+    width: 350px;
+    height: 100px;
+/*    background-color: pink;*/
+    top: 210px;
+    left: 405px;
+}
+#section4 .section4contents .sec4select li.select4 {
+    width: 350px;
+    height: 50px;
+/*    background-color: green;*/
+    top: 160px;
+    left: 405px;
+}
+
+
+/* section2 info 시작 */
+#section4 .triger {
+    width: 550px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: -500px;
+}
+
+/* button */
+
+#section4 .triger .button {
+    width: 50px;
+    height: 100vh;
+    position: absolute;
+    top:0;
+    left: 0;
+    display: table;
+}
+#section4 .triger .button img {
+    position: absolute;
+    top: 50%;
+    right: 70px;
+    animation-name: hand;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+#section4 .triger .button div {
+    top: 48%;
+    left: 20px;
+    position: absolute;
+    width: 50px;
+    height: 100px;
+    cursor: pointer;
+}
+#section4 .triger .button span {
+    display: block;
+    width: 6px;
+    height: 50px;
+    background-color: #fff;
+    transition: all 0.4s;
+    border-radius: 4px 4px;
+}
+
+#section4 .triger .button .btn_off {
+    display: none;
+}
+
+
+#section4 .triger .infobox {
+    width: 500px;
+    height: 100%;
+    background-color: #fff;
+    overflow: hidden;
+    margin-left: 50px;
+}
+#section4 .triger .infobox .imgbox {
+    width: 750px;
+    height: 750px;
+    background-color: blue;
+    transform: rotate(45deg) translateX(-550px);
+    overflow: hidden;
+}
+#section4 .triger .infobox .imgbox img {
+    position: absolute;
+    top: 140px;
+    left: 400px;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-45deg);
+}
+#section4 .triger .infobox .illust {
+    position: absolute;
+    top: 200px;
+    right: 0;
+}
+#section4 .triger .infobox .info {
+    position: absolute;
+    top: 550px;
+    left: 100px;
+}
+#section4 .triger .infobox .info h3 {
+    font-size: 50px;
+    font-weight: 800;
+}
+#section4 .triger .infobox .info .bottombar {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100px;
+    height: 5px;
+    background-color: skyblue;
+}
+#section4 .triger .infobox .info p {
+    width: 400px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: #333;
+}
+#section4 .triger .infobox .info ul.iconbox {
+    position: relative;
+    top: 40px;
+    left: 0;
+}
+#section4 .triger .infobox .info ul.iconbox:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+#section4 .triger .infobox .info ul.iconbox li {
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+#section4 .triger .infobox .info ul.iconbox li h4 {
+    font-size: 25px;
+    font-weight: 600;
+    padding: 20px 0;
+}
+#section4 .triger .infobox .info ul.iconbox li span {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+
+
+
+/* nav */
+
+/* repeat */
+#repeat{
+    width: 100%;
+    height: 100%;
+}
+.logo_icon { 
+    position: fixed;
+    top:0;
+    left: 0;
+}
+
+/* logo - munuicon */
+.logo { 
+    position: absolute;
+    top:30px;
+    left:50px;
+}
+.logo h1 { 
+    width: 200px;
+    height: 90px;
+    overflow: hidden;
+}
+.logo h1 img { 
+    width: 100%;
+}
+
+.menuicon { 
+    position: absolute;
+    top:60px;
+    left:1700px;
+}
+
+.menuicon h1 { 
+    width: 180px;
+    overflow: hidden;
+}
+.menuicon h1 img { 
+    width: 100%;
+}
+
+/* 500px menuicon */
+
+.navbg2 {
+    position: fixed;
+    top: -1000px;
+    left: 0;
+    width: 500px;
+    z-index: 9999;
+}
+
+.menuicon2 {
+    position: fixed;
+    top: 45px;
+    left: 420px;
+    cursor: pointer;
+    z-index: 9999999;
+    display: none;
+}
+.menuicon2 a {
+    display: block;
+    width: 35px;
+    height: 35px;
+}
+.menuicon2 a span {
+    position: absolute;
+    z-index: 999999;
+}
+.menuicon2 a span:nth-child(1) {
+    content: "";
+    display: block;
+    width: 35px;
+    height: 4px;
+    border-radius: 2px 2px;
+    background-color: #fff;
+    transition: all 0.3s;
+}
+.menuicon2 a span:nth-child(2) {
+    display: block;
+    width: 35px;
+    height: 4px;
+    border-radius: 2px 2px;
+    background-color: #fff;
+    top: 10px;
+}
+.menuicon2 a span:nth-child(3) {
+    content: "";
+    display: block;
+    width: 35px;
+    height: 4px;
+    border-radius: 2px 2px;
+    background-color: #fff;
+    top: 20px;
+    transition: all 0.3s;
+}
+
+.navbg2 .menuname {
+    position: absolute;
+    top: 200px;
+    right: -400px;
+}
+.navbg2 .menuname ul {}
+.navbg2 .menuname ul li {
+    width: 400px;
+    height: 100px;
+    transition: all 0.7s;
+}
+.navbg2 .menuname ul li.li1.on {
+    transform: translateX(-420px);
+    opacity: 1;
+}
+.navbg2 .menuname ul li.li2.on {
+    transform: translateX(-420px);
+    opacity: 1;
+    transition-delay: 0.3s;
+}
+.navbg2 .menuname ul li.li3.on {
+    transform: translateX(-420px);
+    opacity: 1;
+    transition-delay: 0.6s;
+}
+.navbg2 .menuname ul li.li4.on {
+    transform: translateX(-420px);
+    opacity: 1;
+    transition-delay: 0.9s;
+}
+.navbg2 .menuname ul li a {
+    font-size: 60px;
+    color: #fff;
+    font-family: "yg-jalnan";
+} 
+.navbg2 .ticket2 {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 1s;
+}
+
+/* 500px 끝 */
+
+/* nav */
+#nav {
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 95%;
+    z-index: 100;
+}
+.navbg {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.navbg > img{
+    width: 100%;
+}
+.close{
+    position: absolute;
+    top:80px;
+    right:80px;
+    width: 50px;
+    height: 50px;
+}
+.close:hover{
+    transform: rotate(360deg);
+    transition: all 0.5s;
+}
+.close > a {
+    display: block;
+    width: 60px;
+    height: 60px;
+}
+.close > a > img {
+    width: 100%;
+}
+
+
+/* menu */
+.main_menu { 
+    position: absolute;
+    top:10%;
+    left:10%;
+    width: 80%;
+    height: 80%;
+}
+.menu {
+    width: 1500px;
+    height: 80%;
+    margin: 5% auto;
+}
+.menu_img {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+.menu_img:after{
+    content:" ";
+    display: block;
+    clear: both;
+}
+.menu_img > li{
+    float: left;
+    width: 300px;
+    text-align: center;
+}
+.menu_img > li:nth-child(1){
+    text-align: left;
+    width: 250px;
+    margin-right: 50px;
+}
+.menu_img > li:nth-child(2n){
+    margin-top:-30px;
+}
+.menu_img > li:nth-child(2n+1){
+    margin-top:50px;
+}
+.menu_img > li > a { 
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.menu_img > li > a > img { 
+    width: 210px;
+}
+
+.menu_img > li > h1 {
+    font-size: 80px;
+    color: #fbd209;
+    font-family: "yg-jalnan";
+    border-bottom: 3px solid #fbd209;
+    text-align: center;
+    margin-top:100px;
+}
+.menu_img > li > a > p {
+    font-size: 35px;
+    padding-top:25px;
+    color: #fff;
+    font-family: "yg-jalnan";
+}
+
+.sub { 
+    width: 120px;
+    margin: 10px auto;
+    text-align: left;
+}
+.sub > li { }
+.sub > li > a { 
+    font-size: 18px;
+    line-height: 2rem;
+    color: #fff;
+}
+.sub > li > a:hover { 
+    font-weight: bold;
+}
+
+
+
+
+/* ticket */
+.ticket {
+    position: absolute;
+    bottom:0;
+    right: 150px;
+    width:250px;
+    height: 210px;
+    overflow: hidden;
+}
+.ticket a img {
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+/* footer */
+
+.nav_bottom {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 110;
+}
+
+.footer_bg { 
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+    position:absolute;
+    top: 0;
+    left: 0;
+}
+.footer_bg > img { 
+    width: 100%;
+    height: 100%;
+}
+.footer_bg > .container { 
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    left:0;
+    top:0;
+}
+
+.footer { 
+    width: 1200px;
+    height: 80px;
+    margin: 0 auto;
+}
+.footer:after{
+    content:" ";
+    display: block;
+    clear: both;
+}
+.footer p{
+    font-size: 12px;
+    font-family: "Nanum Gothic";
+    width: 976px;
+    float: left;
+    padding-top:38px;
+}
+.footer ul{
+    float:right;
+    width: 224px;
+}
+.footer ul li { 
+    float: left;
+}
+.footer ul li a {
+    display: block;
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    overflow: hidden;
+    margin-left: 20px;
+    margin-top:28px;
+}
+
+
+
+
+
+
+
+
+/* mediaquery */
+
+
+@media (max-width: 500px) {
+    
+    .logo { 
+    position: absolute;
+    top:10px;
+    left:20px;
+    }    
+    .logo h1 { 
+    width: 150px;
+    height: 65px;
+    overflow: hidden;
+    }
+    .logo h1 img { 
+    width: 100%;
+    }
+    .menuicon {
+        display: none;
+    }
+    .menuicon2 {
+        display: block;
+    }
+    #nav {
+        display: none;
+    }
+    .navbg2 {
+        display: block;
+    }
+    
+    .triger {
+        display: none;
+    }
+    .triger500px {
+        display: block;
+    }
+/*
+    .triger500px .infobox500 .infotxt {
+        transform: translateY(-200px);
+    }
+    
+*/
+    /* 공통 끝 */
+    
+    #section1, #section2, #section3, #section4 {
+        width: 500px;
+        height: 100vh;
+    }
+    .container {
+        width: 100%;
+    }
+    #section1 .title {
+        width: 300px;
+        margin: 0 auto;
+    }
+    #section1 .title h1 {
+        font-size: 40px;
+        letter-spacing: -5px;
+    }
+    #section1 .section1contents {
+        display: none;
+    }
+    #section1 .section1-500px {
+        display: block;
+    }
+    
+    #section4 .fly {
+        left: -200px;
+        bottom: -50px;
+    }
+    
+    
+    /* section 공통 */
+    #section2 {
+        width: 500px;
+    }
+    #section2 .spider img {
+        width: 150px;
+    }
+    #section3 .swim img {
+        width: 150px;
+    }
+    #section2 h2, #section3 h2, #section4 h2 {
+        font-size: 40px;
+        margin-top: 80px;
+    }
+    #section2 .section2contents, #section3 .section3contents {
+        width: 400px;
+        margin-left: 50px;
+    }
+    #section2 .section2contents .sec2conbg, #section3 .section3contents .sec3conbg, #section4 .section4contents .sec4conbg {
+        width: 400px;
+        margin-left: 50px;
+    }
+    
+    
+    /* select 위치 */
+    
+    #section2 .section2contents .sec2select li img, #section3 .section3contents .sec3select li img, #section4 .section4contents .sec4select li img {
+        width: 30px;
+    }
+    
+    
+    #section2 .section2contents .sec2select, #section3 .section3contents .sec3select, #section4 .section4contents .sec4select {
+        top: -260px;
+        left: 0;
+    }
+    #section2 .section2contents .sec2select li.select1 {
+    width: 100px;
+    height: 50px;
+/*    background-color: red;*/
+    top: -25px;
+    left: 180px;
+    }
+    #section2 .section2contents .sec2select li.select2 {
+    width: 100px;
+    height: 50px;
+/*    background-color: blue;*/
+    top: 0px;
+    left: 330px;
+    }
+    #section2 .section2contents .sec2select li.select3 {
+    width: 100px;
+    height: 50px;
+/*    background-color: pink;*/
+    top: 30px;
+    left: 70px;
+    }
+    #section2 .section2contents .sec2select li.select4 {
+    width: 100px;
+    height: 50px;
+/*    background-color: green;*/
+    top: 90px;
+    left: 70px;
+    }
+    #section3 .section3contents .sec3select li.select1 {
+    width: 100px;
+    height: 50px;
+/*    background-color: red;*/
+    top: 10px;
+    left: 190px;
+    }
+    #section3 .section3contents .sec3select li.select2 {
+    width: 80px;
+    height: 50px;
+/*    background-color: blue;*/
+    top: 110px;
+    left: 210px;
+    }
+    #section3 .section3contents .sec3select li.select3 {
+    width: 100px;
+    height: 50px;
+/*    background-color: pink;*/
+    top: 50px;
+    left: 80px;
+    }
+    #section3 .section3contents .sec3select li.select4 {
+    width: 100px;
+    height: 50px;
+/*    background-color: green;*/
+    top: 110px;
+    left: 85px;
+    }   
+    
+    #section4 .section4contents .sec4select li.select1 {
+    width: 170px;
+    height: 100px;
+/*    background-color: red;*/
+    top: 20px;
+    left: 80px;
+    }
+    #section4 .section4contents .sec4select li.select2 {
+    width: 170px;
+    height: 30px;
+/*    background-color: blue;*/
+    top: 120px;
+    left: 255px;
+    }
+    #section4 .section4contents .sec4select li.select3 {
+    width: 170px;
+    height: 60px;
+/*    background-color: pink;*/
+    top: 60px;
+    left: 255px;
+    }
+    #section4 .section4contents .sec4select li.select4 {
+    width: 170px;
+    height: 30px;
+/*    background-color: green;*/
+    top: 30px;
+    left: 255px;
+    }    
+}
+
+
+
+
