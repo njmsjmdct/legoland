@@ -1539,7 +1539,7 @@
     
     #section1, #section2, #section3, #section4 {
         width: 500px;
-        height: 100vh;
+        height: 100%;
     }
     .container {
         width: 100%;
