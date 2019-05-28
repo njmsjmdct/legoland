@@ -1495,7 +1495,7 @@
 /* mediaquery */
 
 
-@media (max-width: 500px) {
+@media (max-width: 360px) {
     
     .logo { 
     position: absolute;
@@ -1538,14 +1538,14 @@
     /* 공통 끝 */
     
     #section1, #section2, #section3, #section4 {
-        width: 500px;
+        width: 360px;
         height: 100vh;
     }
     .container {
         width: 100%;
     }
     #section1 .title {
-        width: 300px;
+        width: 200px;
         margin: 0 auto;
     }
     #section1 .title h1 {
@@ -1567,7 +1567,7 @@
     
     /* section 공통 */
     #section2 {
-        width: 500px;
+        width: 360px;
     }
     #section2 .spider img {
         width: 150px;
@@ -1580,11 +1580,11 @@
         margin-top: 80px;
     }
     #section2 .section2contents, #section3 .section3contents {
-        width: 400px;
+        width: 260px;
         margin-left: 50px;
     }
     #section2 .section2contents .sec2conbg, #section3 .section3contents .sec3conbg, #section4 .section4contents .sec4conbg {
-        width: 400px;
+        width: 260px;
         margin-left: 50px;
     }
     
